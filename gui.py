@@ -137,8 +137,8 @@ class ScrabbleGUI:
             return
 
         result = ""
-        for s in suggestions:
-            result += f"{s['mot']} à ({s['ligne']}, {s['colonne']}) {s['direction']} - Score: {s['score']}\n"
+        for mot, datas in suggestions.items():
+            result += f"{mot} à ({datas['placement']['ligne']}, {datas['placement']['colonne']}) {datas['placement']['direction']} - Score: {datas['score']}\n"
 
         messagebox.showinfo("Meilleurs mots proposés", result)
 
